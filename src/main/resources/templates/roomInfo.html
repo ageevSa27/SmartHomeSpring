@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+<header th:insert="frag/header :: header"></header>
+
+<div th:each="el: ${roominfo}">
+    <div class="container mt-2">
+        <div class="col-md-8 mx-auto">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div th:text="${el.protechka}"></div>
+                </li>
+                <li class="list-group-item">
+                    <div th:text="${el.zadimlenie}"></div>
+                </li>
+                <li class="list-group-item">
+                    <div th:text="${el.vlajnost}"></div>
+                </li>
+                <li class="list-group-item">
+                    <div th:text="${el.osveshennost}"></div>
+                </li>
+                <li class="list-group-item">
+                    <div th:text="${el.temp}"></div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<div class="position-relative"><a class="btn btn-primary" href="/roomInfo/add" role="button">Добавить</a></div>
+<footer th:insert="frag/footer :: footer"></footer>
+</body>
+</html>
